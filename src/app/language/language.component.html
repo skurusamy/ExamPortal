@@ -1,0 +1,59 @@
+<!--<p>Welcome {{fname}} {{lname}}</p>-->
+<body class="container">
+<div class="container">
+    <p class="h3 text-center">Welcome to online Assessment Portal</p>
+<div class="main-content container">
+    <div class=" left-content">
+        <div class="container name">
+            Welcome {{fname}} {{lname}} !!!
+        </div>
+        
+        <p id="ins-title">General Instructions:</p>
+        <ul id="ins"> 
+            <li>Please verify if your name appears correctly.</li>
+            <li>Close all programs, including email.</li>
+            <li>Students may not use any material for reference.</li>
+            <li>Students must complete all the question within the allotted time.</li>
+        </ul>
+        <p id="ins-title">Instructions about exam</p>
+        <ul id="ins">
+            <li>You will not be able to change language in between your exam</li>
+            <li>You will have 10 questions for each language</li>
+            <li>Try to answer all questions. In general, if you have some knowledge about a question, it is better to try to answer it. You will not be penalized for guessing.</li>
+            <li><b>Multiple Attempts</b> - You will have three attempts for this quiz with your highest score being recorded in the grade book.</li>
+            <li><b>Answers</b> - You may review your answer-choices and compare them to the correct answers after your final attempt.</li>
+        </ul>
+    </div>
+    <div class="col-md-3 ">
+        <div class="container input-group">
+            <form class="form-group" [formGroup]="termsForm"(ngSubmit)="lang.value !='Select One' &&terms.value && startTest()">
+                <div class="form-group">
+                    <label  for="lang">Select Your Programming Language</label>
+                    <select formControlName="lang" class="form-control"  >
+                        <option selected disabled>Select One</option>
+                        <option *ngFor="let quiz of quizes" [value]="quiz.id">{{quiz.name}}</option>
+                    </select>
+                    <div class="alert alert-danger" *ngIf="lang.touched && lang.value =='Select One'">
+                        <p >Select Your Programming Language</p>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input formControlName="terms" type="checkbox" value=""><span style="color: red">*</span> I agree to the above terms</label>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="!terms.value">
+                        <p >Please agree with the terms to proceed</p>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info">Start Test</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+</div>
+</body>

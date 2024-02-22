@@ -1,0 +1,31 @@
+#welcome{
+    margin-left: 55%;
+}
+#last-row{
+    position: relative;
+    top: 84%;
+}
+#submit{
+    position: relative;
+    left:84%;
+}
+#review-btn{
+    position: relative;
+    left:64%;
+}
+#quiz-btn{
+    position: relative;
+    left:58%;
+}
+#review-row1 {
+    width: 30%;
+    float: left;
+    text-align: center;
+    padding: 4px;
+}
+.red{
+    color: red;
+}
+.green{
+    color:green;
+}

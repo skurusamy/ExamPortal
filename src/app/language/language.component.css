@@ -1,0 +1,22 @@
+.main-content{
+    margin-top: 6%;
+}
+ul li{
+    padding:4px;
+}
+#ins{
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+#ins-title{
+    font-size: 22pt;
+    color: rgb(2, 0, 0);
+    font-style: bold;
+}
+.name{
+    font-size: 32pt;
+    color: rgb(33, 54, 4);
+    font-style: bold; 
+}

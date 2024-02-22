@@ -1,0 +1,47 @@
+<body>
+
+<div class="container">
+    <p class="h3 text-center">Welcome to online Assessment Portal</p>
+    <div class="col-md-5 text-center">
+        <img class="rounded mx-auto d-block lap-img" src="assets/bg.jpg">
+    </div>
+    <div class="col-md-6 container regForm">
+        <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && register()" > 
+            <!--<div class="alert alert-danger" *ngIf="registerForm.invalid">
+                Please fill out all the fields
+            </div>-->
+            <fieldset>
+                <legend>Register to take Exam</legend>
+                <div class="form-group">
+                    <label for="fname">First Name<span class="imp">*</span></label>
+                    <input type="text" formControlName="fname" class="form-control" placeholder="FirstName">
+                    <div class="alert alert-danger" *ngIf="fname.touched && fname.invalid">
+                        <p *ngIf="fname.errors.required">First Name is mandatory</p>
+                        <p *ngIf="fname.errors.minlength">First Name must be more than 3 characters</p>
+                        <p *ngIf="fname.errors.pattern">First Name should contain only characters</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name<span class="imp">*</span></label>
+                    <input type="text" formControlName="lname" class="form-control" placeholder="Lastname">
+                    <div class="alert alert-danger" *ngIf="lname.touched && lname.invalid">
+                        <p *ngIf="lname.errors.required">Last Name is mandatory</p>
+                        <p *ngIf="lname.errors.pattern">Last Name should contain only characters</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email<span class="imp">*</span></label>
+                    <input type="email" formControlName="email" class="form-control" placeholder="name@mail.com">
+                    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+                        <p *ngIf="email.errors.required">Email is mandatory</p>
+                        <p *ngIf="email.errors.pattern">Please match email pattern</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info">Register</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
